@@ -182,7 +182,6 @@ function Coachmark() {
       const style = document.createElement("style");
       document.head.appendChild(style);
       const styleSheet = style.sheet;
-      console.log(`${selector} { ${styles} }`, styleSheet.cssRules.length);
       styleSheet.insertRule(
         `${selector} { ${styles} }`,
         styleSheet.cssRules.length
@@ -191,7 +190,6 @@ function Coachmark() {
   }
 
   function getBgColor(element) {
-    console.log(element);
     let backgroundColor = window
       .getComputedStyle(element)
       .getPropertyValue("background-color");
