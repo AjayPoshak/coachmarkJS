@@ -90,6 +90,7 @@ function Coachmark() {
       throw new Error(
         `To start using Coachmark plugin, please add data-coachmark attribute.`
       );
+
     const { top, left } = element.getBoundingClientRect();
     const height = element.offsetHeight,
       width = element.offsetWidth;
@@ -120,8 +121,11 @@ function Coachmark() {
 
     // Add class to the element
     element.classList.add("coachmark-highlight");
+
     // Scroll element's parent container so that it is visible
-    element.scrollIntoView({ behavior: "smooth", block: "start" });
+    setTimeout(() => { // Chrome hack for scrollIntoView
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 0)
 
     if (currentStep === steps.length - 1) {
       nextBtn.style.display = "none";
@@ -159,6 +163,8 @@ function Coachmark() {
     removeHighlight(steps[currentStep]);
     const mountPoint = document.getElementById("js-coachmark");
     if (mountPoint) mountPoint.remove();
+    if (nextBtn) nextBtn.removeEventListener("click", handleNextBtnClick);
+    if (skipBtn) skipBtn.removeEventListener("click", handleSkipClick);
   }
 
   function getCoachmarkElements() {
