@@ -7,7 +7,8 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup --config rollup.config.js",
+    "prepublishOnly": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/AjayPoshak/coachmarkJS/issues"
   },
-  "homepage": "https://github.com/AjayPoshak/coachmarkJS#readme"
+  "homepage": "https://github.com/AjayPoshak/coachmarkJS#readme",
+  "devDependencies": {
+    "rollup": "^1.27.0",
+    "rollup-plugin-terser": "^5.1.2"
+  }
 }
