@@ -21,8 +21,12 @@ body {
 
 .content {
     max-width: 40em;
-    padding: 10em 1em;
+    padding: 8em 2em;
     margin: 0 auto;
+}
+
+.content .__text {
+    padding: 1em;
 }
 
 .coachmarks .section-1 {
@@ -52,6 +56,22 @@ body {
     max-width: 10em;
     text-align: center;
     background-color: var(--secondary-color);;
+}
+
+.coachmarks .section-1 .links {
+    display: flex;
+    max-width: 25%;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+.coachmarks .section-1 .links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.coachmarks .section-1 .links a:hover {
+    cursor:pointer;
 }
 
 @media (max-width: 720px) {
