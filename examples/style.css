@@ -1,0 +1,123 @@
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #0574ac;
+    --font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+}
+
+.coachmarks {
+    /* max-width: 40em; */
+    margin: 0 auto;
+}
+
+.content {
+    max-width: 40em;
+    padding: 10em 1em;
+    margin: 0 auto;
+}
+
+.coachmarks .section-1 {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+.coachmarks .section-1 .header {
+    font-size: 24px;
+    font-weight: 700;
+    padding-bottom: 2em;
+    text-align: center;
+}
+
+.coachmarks .section-2 {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+.coachmarks .section-2 .column-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.coachmarks .section-2 .column {
+    max-width: 10em;
+    text-align: center;
+    background-color: var(--secondary-color);;
+}
+
+@media (max-width: 720px) {
+    .coachmarks .section-2 .column-container {
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .coachmarks .section-2 .column {
+        padding: 4em 0;
+    }
+}
+/* 
+.coachmark-interface {
+    position: absolute;
+    z-index: 999;
+    transition: all 0.4s ease;
+    background-color: transparent;
+} */
+
+/* .coachmark-overlay {
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: rgb(0,0,0, 0.5);
+} */
+
+/* .coachmark-highlight {
+    position: relative;
+    z-index: 9999;
+} */
+
+/* .coachmark-tooltip {
+    padding: 1em;
+    display: flex;
+    z-index: 9999999;
+    margin-top: 1rem;
+    position: absolute;
+    flex-direction: column;
+    transition: all 0.4s ease;
+    background-color: var(--primary-color);
+} */
+
+/* .coachmark-tooltip:before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top: -8px;
+    background-color: #fff;
+    transform: rotate(45deg);
+} */
+
+/* .coachmark-tooltip .coachmark-btns {
+    display: flex;
+    padding-top: 1rem;
+    align-items: center;
+    justify-content: space-between;
+} */
+
+/* .coachmark-tooltip .coachmark-btns .__btn {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    appearance: none;
+} */
