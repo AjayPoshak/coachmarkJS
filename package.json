@@ -9,7 +9,7 @@
   },
   "scripts": {
     "prepublishOnly": "yarn build",
-    "build": "rollup --config rollup.config.js",
+    "build": "rollup --config rollup.config.js && cp package.json dist/package.json",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
@@ -26,5 +26,8 @@
   "devDependencies": {
     "rollup": "^1.27.0",
     "rollup-plugin-terser": "^5.1.2"
-  }
+  },
+  "np": {
+		"contents": "dist"
+	}
 }
