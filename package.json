@@ -8,8 +8,9 @@
     "example": "examples"
   },
   "scripts": {
+    "prepublishOnly": "yarn build",
     "build": "rollup --config rollup.config.js",
-    "prepublishOnly": "yarn build"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
