@@ -1,0 +1,23 @@
+{
+  "name": "coachmarks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AjayPoshak/coachmarkJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AjayPoshak/coachmarkJS/issues"
+  },
+  "homepage": "https://github.com/AjayPoshak/coachmarkJS#readme"
+}
