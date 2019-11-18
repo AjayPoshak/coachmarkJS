@@ -58,8 +58,10 @@ function Coachmark() {
     padding: 0.5rem;
     font-size: 0.9rem;
     border-radius: 5px;
-    appearance: none;
+    border: 1px solid #666;
     -moz-appearance: none;
+    background-color: #fff;
+    -webkit-appearance: none;
   `;
 
   function init() {
