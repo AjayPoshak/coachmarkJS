@@ -58,9 +58,23 @@ body {
     background-color: var(--secondary-color);;
 }
 
+.coachmarks .section-2 .column .img-container {
+    height: 100px;
+}
+
+.coachmarks .section-2 .column img {
+    width: 100px;
+    height: 100px;
+}
+
+.coachmarks .section-2 .column .img2 {
+    width: 80px;
+    height: 80px;
+}
+
 .coachmarks .section-1 .links {
     display: flex;
-    max-width: 25%;
+    width: 40%;
     margin: 0 auto;
     justify-content: space-around;
 }
@@ -74,7 +88,31 @@ body {
     cursor:pointer;
 }
 
+.footer {
+    padding: 1em;
+    color: #333333;
+    background-color: #000;
+}
+
+.footer a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    cursor: pointer;
+}
+.footer p:not(:first-child) {
+    padding-left: 0.5em;
+}
+
 @media (max-width: 720px) {
+    .content {
+        max-width: 40em;
+        padding: 4em 2em;
+        margin: 0 auto;
+    }
+    
     .coachmarks .section-2 .column-container {
         align-items: center;
         flex-direction: column;
