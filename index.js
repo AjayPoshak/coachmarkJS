@@ -65,7 +65,13 @@ function Coachmark() {
   `;
 
   function init() {
-    steps = document.querySelectorAll("*[data-coachmark]");
+    const coachmarkSelectors = document.querySelectorAll("*[data-coachmark]");
+
+    // Sort the coachmarks according to their data attributes so that user can decide
+    // the elements priority.
+    const coachmarks = Array.from(coachmarkSelectors) || [];
+    steps = sortArr(coachmarks);
+
     const coachmarkElements = getCoachmarkElements();
     document.body.insertAdjacentHTML("beforeend", coachmarkElements);
 
@@ -125,9 +131,10 @@ function Coachmark() {
     element.classList.add("coachmark-highlight");
 
     // Scroll element's parent container so that it is visible
-    setTimeout(() => { // Chrome hack for scrollIntoView
+    setTimeout(() => {
+      // Chrome hack for scrollIntoView
       element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 0)
+    }, 0);
 
     if (currentStep === steps.length - 1) {
       nextBtn.style.display = "none";
@@ -211,6 +218,22 @@ function Coachmark() {
         .getPropertyValue("background-color");
     }
     return backgroundColor;
+  }
+
+  function sortArr(arr) {
+    if (!Array.isArray(arr) || arr.length === 0) return [];
+    arr.sort((a, b) => {
+      const aValue = Number.parseInt(a.dataset.coachmark, 10);
+      const bValue = Number.parseInt(b.dataset.coachmark, 10);
+      if (aValue < bValue) {
+        return -1;
+      }
+      if (aValue > bValue) {
+        return 1;
+      }
+      return 0;
+    });
+    return [...arr];
   }
 
   return {
