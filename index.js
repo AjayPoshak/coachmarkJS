@@ -6,7 +6,7 @@ function Coachmark() {
   let currentStep = 0;
   let highlighter = null;
   let tooltipTextElement = null;
-  let styleClass = 'coachmark-styles'
+  let styleClass = "coachmark-styles";
 
   const overlayStyles = ` 
     top: 0; 
@@ -182,9 +182,11 @@ function Coachmark() {
     if (nextBtn) nextBtn.removeEventListener("click", handleNextBtnClick);
     if (skipBtn) skipBtn.removeEventListener("click", handleSkipClick);
     // Destroy all dynamically inserted styles
-    const allDynamicStyles = document.getElementsByClassName(styleClass)
-    if(allDynamicStyles.length) {
-      Array.from(allDynamicStyles).forEach(dynamicStyle => dynamicStyle.remove())
+    const allDynamicStyles = document.getElementsByClassName(styleClass);
+    if (allDynamicStyles.length) {
+      Array.from(allDynamicStyles).forEach(dynamicStyle =>
+        dynamicStyle.remove()
+      );
     }
   }
 
@@ -207,7 +209,7 @@ function Coachmark() {
   function addStyles(selector, styles) {
     if (styles.length) {
       const style = document.createElement("style");
-      style.classList.add(styleClass)
+      style.classList.add(styleClass);
       document.head.appendChild(style);
       const styleSheet = style.sheet;
       styleSheet.insertRule(
