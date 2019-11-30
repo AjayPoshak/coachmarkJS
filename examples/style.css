@@ -90,6 +90,7 @@ body {
 
 .footer {
     padding: 1em;
+    display: flex;
     color: #333333;
     background-color: #000;
 }
@@ -113,6 +114,10 @@ body {
         margin: 0 auto;
     }
     
+    .footer {
+        display: block;
+    }
+
     .coachmarks .section-2 .column-container {
         align-items: center;
         flex-direction: column;
