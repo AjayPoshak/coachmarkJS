@@ -115,10 +115,10 @@ function Coachmark() {
 
     if (highlighter) {
       highlighter.style["background-color"] = backgroundColor;
-      highlighter.style.top = top + yScrollPosition;
-      highlighter.style.left = left + xScrollPosition;
-      highlighter.style.width = width;
-      highlighter.style.height = height;
+      highlighter.style.top = `${top + yScrollPosition}px`;
+      highlighter.style.left = `${left + xScrollPosition}px`;
+      highlighter.style.width = `${width}px`;
+      highlighter.style.height = `${height}px`;
     }
 
     addTooltip({
@@ -153,7 +153,7 @@ function Coachmark() {
   function addTooltip({ top, left, height }) {
     tooltip.style.top = `${Number.parseInt(top, 10) +
       Number.parseInt(height, 10)}px`;
-    tooltip.style.left = left;
+    tooltip.style.left = `${left}px`;
   }
 
   function handleSkipClick() {
