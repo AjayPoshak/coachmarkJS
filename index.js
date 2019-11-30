@@ -5,6 +5,7 @@ function Coachmark() {
   let skipBtn = null;
   let currentStep = 0;
   let highlighter = null;
+  let tooltipTextElement = null;
 
   const overlayStyles = ` 
     top: 0; 
@@ -77,6 +78,7 @@ function Coachmark() {
 
     highlighter = document.getElementById("js-coachmark-interface");
     tooltip = document.getElementById("js-coachmark-tooltip");
+    tooltipTextElement = document.getElementById("js-coachmark-tooltip-text");
     skipBtn = document.querySelector(".coachmark-skip");
     nextBtn = document.querySelector(".coachmark-next");
 
@@ -104,6 +106,7 @@ function Coachmark() {
       width = element.offsetWidth;
 
     const backgroundColor = getBgColor(element);
+    const tooltipText = element.dataset.coachmarkText || "";
 
     /**
      * getBoundingClientRect returns the element's position
@@ -122,9 +125,10 @@ function Coachmark() {
     }
 
     addTooltip({
+      height,
+      text: tooltipText,
       top: top + yScrollPosition,
-      left: left + xScrollPosition,
-      height
+      left: left + xScrollPosition
     });
 
     // Add class to the element
@@ -150,10 +154,12 @@ function Coachmark() {
     }
   }
 
-  function addTooltip({ top, left, height }) {
+  function addTooltip({ top, left, height, text }) {
+    if (text === "") console.warn("Please add text for coachmark tooltip");
     tooltip.style.top = `${Number.parseInt(top, 10) +
       Number.parseInt(height, 10)}px`;
     tooltip.style.left = `${left}px`;
+    tooltipTextElement.textContent = text;
   }
 
   function handleSkipClick() {
@@ -182,7 +188,7 @@ function Coachmark() {
             <section id="js-coachmark-overlay" class="coachmark-overlay"></section>
             <section id="js-coachmark-interface" class="coachmark-interface"></section>
 							<section id="js-coachmark-tooltip" class="coachmark-tooltip">
-								<header>This is the intro text</header>
+								<header id="js-coachmark-tooltip-text">This is the intro text</header>
 								<article class="coachmark-btns">
 									<button class="coachmark-skip __btn">Skip</button>
 									<button class="coachmark-next __btn">Next</button>
